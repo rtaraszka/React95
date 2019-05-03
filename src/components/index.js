@@ -20,6 +20,7 @@ import NumberField from "./NumberField/NumberField";
 import Progress from "./Progress/Progress";
 import Radio from "./Radio/Radio";
 import Select from "./Select/Select";
+import Snackbar from "./Snackbar/Snackbar";
 import Tab from "./Tab/Tab";
 import Tabs from "./Tabs/Tabs";
 import TabBody from "./TabBody/TabBody";
@@ -57,6 +58,7 @@ export {
   Progress,
   Radio,
   Select,
+  Snackbar,
   Tab,
   Tabs,
   TabBody,
