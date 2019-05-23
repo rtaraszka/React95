@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import Snackbar from "./Snackbar";
+import { Snackbar, Button, Toolbar } from "../";
 
 storiesOf("Snackbar", module)
   .addDecorator(story => (
@@ -15,5 +15,15 @@ storiesOf("Snackbar", module)
     </div>
   ))
   .add("default", () => (
-    <Snackbar>Your post has been submitted successfully!</Snackbar>
+    <Snackbar>
+      Your post has been submitted successfully!
+      <Toolbar style={{ marginTop: "0.5rem", marginBottom: "-0.5rem" }}>
+        <Button variant="flat" fullWidth>
+          OK
+        </Button>
+        <Button variant="flat" fullWidth disabled>
+          Cancel
+        </Button>
+      </Toolbar>
+    </Snackbar>
   ));
