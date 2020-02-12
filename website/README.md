@@ -1,68 +1,198 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This website was created with [Docusaurus](https://docusaurus.io/).
 
-## Available Scripts
+# What's In This Document
 
-In the project directory, you can run:
+- [Get Started in 5 Minutes](#get-started-in-5-minutes)
+- [Directory Structure](#directory-structure)
+- [Editing Content](#editing-content)
+- [Adding Content](#adding-content)
+- [Full Documentation](#full-documentation)
 
-### `npm start`
+# Get Started in 5 Minutes
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Make sure all the dependencies for the website are installed:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```sh
+# Install dependencies
+$ yarn
+```
 
-### `npm test`
+2. Run your dev server:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+# Start the site
+$ yarn start
+```
 
-### `npm run build`
+## Directory Structure
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Your project file structure should look something like this
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+my-docusaurus/
+  docs/
+    doc-1.md
+    doc-2.md
+    doc-3.md
+  website/
+    blog/
+      2016-3-11-oldest-post.md
+      2017-10-24-newest-post.md
+    core/
+    node_modules/
+    pages/
+    static/
+      css/
+      img/
+    package.json
+    sidebars.json
+    siteConfig.js
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Editing Content
 
-### `npm run eject`
+## Editing an existing docs page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Edit docs by navigating to `docs/` and editing the corresponding document:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`docs/doc-to-be-edited.md`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```markdown
+---
+id: page-needs-edit
+title: This Doc Needs To Be Edited
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Edit me...
+```
 
-## Learn More
+For more information about docs, click [here](https://docusaurus.io/docs/en/navigation)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Editing an existing blog post
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Edit blog posts by navigating to `website/blog` and editing the corresponding post:
 
-### Code Splitting
+`website/blog/post-to-be-edited.md`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```markdown
+---
+id: post-needs-edit
+title: This Blog Post Needs To Be Edited
+---
 
-### Analyzing the Bundle Size
+Edit me...
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+For more information about blog posts, click [here](https://docusaurus.io/docs/en/adding-blog)
 
-### Making a Progressive Web App
+# Adding Content
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Adding a new docs page to an existing sidebar
 
-### Advanced Configuration
+1. Create the doc as a new markdown file in `/docs`, example `docs/newly-created-doc.md`:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```md
+---
+id: newly-created-doc
+title: This Doc Needs To Be Edited
+---
 
-### Deployment
+My new content here..
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+1. Refer to that doc's ID in an existing sidebar in `website/sidebars.json`:
 
-### `npm run build` fails to minify
+```javascript
+// Add newly-created-doc to the Getting Started category of docs
+{
+  "docs": {
+    "Getting Started": [
+      "quick-start",
+      "newly-created-doc" // new doc here
+    ],
+    ...
+  },
+  ...
+}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+For more information about adding new docs, click [here](https://docusaurus.io/docs/en/navigation)
+
+## Adding a new blog post
+
+1. Make sure there is a header link to your blog in `website/siteConfig.js`:
+
+`website/siteConfig.js`
+
+```javascript
+headerLinks: [
+    ...
+    { blog: true, label: 'Blog' },
+    ...
+]
+```
+
+2. Create the blog post with the format `YYYY-MM-DD-My-Blog-Post-Title.md` in `website/blog`:
+
+`website/blog/2018-05-21-New-Blog-Post.md`
+
+```markdown
+---
+author: Frank Li
+authorURL: https://twitter.com/foobarbaz
+authorFBID: 503283835
+title: New Blog Post
+---
+
+Lorem Ipsum...
+```
+
+For more information about blog posts, click [here](https://docusaurus.io/docs/en/adding-blog)
+
+## Adding items to your site's top navigation bar
+
+1. Add links to docs, custom pages or external links by editing the headerLinks field of `website/siteConfig.js`:
+
+`website/siteConfig.js`
+
+```javascript
+{
+  headerLinks: [
+    ...
+    /* you can add docs */
+    { doc: 'my-examples', label: 'Examples' },
+    /* you can add custom pages */
+    { page: 'help', label: 'Help' },
+    /* you can add external links */
+    { href: 'https://github.com/facebook/docusaurus', label: 'GitHub' },
+    ...
+  ],
+  ...
+}
+```
+
+For more information about the navigation bar, click [here](https://docusaurus.io/docs/en/navigation)
+
+## Adding custom pages
+
+1. Docusaurus uses React components to build pages. The components are saved as .js files in `website/pages/en`:
+1. If you want your page to show up in your navigation header, you will need to update `website/siteConfig.js` to add to the `headerLinks` element:
+
+`website/siteConfig.js`
+
+```javascript
+{
+  headerLinks: [
+    ...
+    { page: 'my-new-custom-page', label: 'My New Custom Page' },
+    ...
+  ],
+  ...
+}
+```
+
+For more information about custom pages, click [here](https://docusaurus.io/docs/en/custom-pages).
+
+# Full Documentation
+
+Full documentation can be found on the [website](https://docusaurus.io/).
