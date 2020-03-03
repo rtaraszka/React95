@@ -5,32 +5,32 @@
     "previous": "Previous",
     "tagline": "Refreshed Windows 95 style UI components for your React App 🌈🕹",
     "docs": {
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
+      "example-projects": {
+        "title": "Example Projects",
+        "sidebar_label": "Example Projects"
       },
-      "doc2": {
-        "title": "document number 2"
+      "installation": {
+        "title": "Installation",
+        "sidebar_label": "Installation"
       },
-      "doc3": {
-        "title": "This is document number 3"
+      "radio": {
+        "title": "Radio",
+        "sidebar_label": "Radio"
       },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
+      "usage": {
+        "title": "Usage",
+        "sidebar_label": "Usage"
       }
     },
     "links": {
       "Docs": "Docs",
-      "API": "API",
+      "Components": "Components",
       "Help": "Help"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Getting Started": "Getting Started",
+      "Components": "Components",
+      "Contributing": "Contributing"
     }
   },
   "pages-strings": {
