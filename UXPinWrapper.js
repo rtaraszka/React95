@@ -1,6 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import themes from 'src/components/common/themes.js';
+import themes from 'src/components/common/themes';
 
 const theme = themes.default;
 

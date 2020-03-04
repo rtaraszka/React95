@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import logoIMG from '../../images/logo.png';
+import React95Win from '../../images/React95Win.png';
 
 const LogoIcon = ({ style }) => {
   const baseClass = 'LogoIcon';
@@ -10,8 +10,8 @@ const LogoIcon = ({ style }) => {
       style={{ ...style, display: 'inline-block', height: '22px' }}
     >
       <img
-        src={logoIMG}
-        alt='react95 logo'
+        src={React95Win}
+        alt='Windows 95 logo'
         style={{ height: '100%', width: 'auto' }}
       />
     </span>
