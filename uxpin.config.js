@@ -10,7 +10,7 @@ module.exports = {
           // 'src/components/Cutout/Cutout.js',
           'src/components/Progress/Progress.js',
           'src/components/Icon/LogoIcon.js',
-          'src/components/Textfield/Textfield.js',
+          'src/components/TextField/TextField.js',
           'src/components/Window/Window.js',
           'src/components/WindowHeader/WindowHeader.js',
           'src/components/WindowContent/WindowContent.js'
