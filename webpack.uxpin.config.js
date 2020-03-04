@@ -21,7 +21,7 @@ module.exports = {
       },
       {
         test: /\.png$/,
-        loader: 'file-loader?name=images/[name].[ext]',
+        loader: 'url-loader',
         exclude: /node_modules/
       },
       {
